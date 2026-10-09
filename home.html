@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Community Home — ConnecFriend</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="cf-nav-wrap py-3">
+    <div class="container">
+      <div class="cf-nav d-flex flex-wrap align-items-center justify-content-between gap-3"><a href="home.html"
+          class="d-flex align-items-center gap-2 text-decoration-none text-dark"><span class="cf-mark">CF</span>
+          <div><strong class="d-block lh-1">ConnecFriend</strong><small class="text-secondary">your people, in
+              context</small></div>
+        </a>
+        <nav class="d-flex flex-wrap align-items-center gap-2"><a href="home.html" class="cf-nav-link">Home</a><a
+            href="profile.html" class="cf-nav-link">Profile</a><a href="discover.html" class="cf-nav-link">Find
+            Friends</a><a href="messages.html" class="cf-nav-link">Messages</a><a href="login.html"
+            class="btn btn-sm cf-btn-ink rounded-pill px-3">Exit</a></nav>
+      </div>
+    </div>
+  </header>
+  <main class="container py-4 py-lg-5">
+
+    <section class="pulse-hero mb-4">
+      <div class="row align-items-end g-4 position-relative">
+        <div class="col-lg-8">
+          <div class="cf-kicker text-white-50">HOME / FRIEND UPDATES</div>
+          <h1 class="cf-display mt-3">See what your<br>friends are sharing.</h1>
+          <p class="lead text-white-50 mt-4 col-lg-9">View recent friend logins, read shared news, rate friends, and
+            continue private conversations.</p>
+        </div>
+        <div class="col-lg-4">
+          <div class="row g-2">
+            <div class="col-6">
+              <div class="pulse-metric"><small class="text-white-50 d-block">Active now</small><strong
+                  class="fs-3">04</strong></div>
+            </div>
+            <div class="col-6">
+              <div class="pulse-metric"><small class="text-white-50 d-block">New messages</small><strong
+                  class="fs-3">07</strong></div>
+            </div>
+            <div class="col-12">
+              <div class="pulse-metric d-flex justify-content-between align-items-center">
+                <div><small class="text-white-50 d-block">Latest friend login</small><strong>Ayesha Khan</strong></div>
+                <span class="badge cf-btn-lime text-dark rounded-pill">2m ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <div class="d-flex justify-content-between align-items-end gap-3 mb-3">
+        <div>
+          <div class="cf-kicker">RECENT LOGINS</div>
+          <h2 class="h3 fw-bold mb-0">Recently active friends</h2>
+        </div>
+        <small class="text-secondary">Latest login appears first</small>
+      </div>
+      <div class="login-trail">
+        <div class="trail-card">
+          <div class="d-flex align-items-center gap-3"><span class="trail-rank">01</span>
+            <div class="mono mono-a">AY</div>
+            <div><strong class="d-block">Ayesha Khan</strong><small class="text-success">2 min ago</small></div>
+          </div>
+        </div>
+        <div class="trail-card">
+          <div class="d-flex align-items-center gap-3"><span class="trail-rank">02</span>
+            <div class="mono mono-h">HA</div>
+            <div><strong class="d-block">Hira Ahmed</strong><small class="text-secondary">16 min ago</small></div>
+          </div>
+        </div>
+        <div class="trail-card">
+          <div class="d-flex align-items-center gap-3"><span class="trail-rank">03</span>
+            <div class="mono mono-n">NF</div>
+            <div><strong class="d-block">Noor Fatima</strong><small class="text-secondary">41 min ago</small></div>
+          </div>
+        </div>
+        <div class="trail-card">
+          <div class="d-flex align-items-center gap-3"><span class="trail-rank">04</span>
+            <div class="mono mono-m">MA</div>
+            <div><strong class="d-block">Mariam Ali</strong><small class="text-secondary">1 hr ago</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="row g-4 align-items-start">
+      <section class="col-lg-8">
+        <div id="shareBox" class="share-circle p-4 p-lg-5 mb-4">
+          <div class="row g-4 align-items-start">
+            <div class="col-md-4">
+              <div class="mono mono-xl mono-s mb-3">SN</div>
+              <div class="cf-kicker">SHARE NEWS</div>
+              <h2 class="h3 fw-bold mt-2">Share an update with your friends.</h2>
+              <p class="text-secondary">Share with all friends or choose only selected friends.</p>
+            </div>
+            <div class="col-md-8">
+              <div id="shareAlert" class="alert alert-danger d-none"></div>
+              <div id="shareSuccess" class="alert alert-success d-none">Home shared successfully.</div>
+              <form id="shareForm">
+                <textarea id="shareText" class="form-control form-control-lg rounded-4 mb-3" rows="4"
+                  placeholder="What changed today?"></textarea>
+                <div class="row g-2 mb-3">
+                  <div class="col-sm-6"><label class="audience-pill d-block"><input
+                        class="form-check-input me-2 share-audience" type="radio" name="audience" value="all" checked>
+                      <strong>All Friends</strong><small class="d-block text-secondary ms-4">All friends</small></label>
+                  </div>
+                  <div class="col-sm-6"><label class="audience-pill d-block"><input
+                        class="form-check-input me-2 share-audience" type="radio" name="audience" value="some">
+                      <strong>Selected Friends</strong><small class="d-block text-secondary ms-4">Selected
+                        friends</small></label></div>
+                </div>
+                <div id="friendSelector" class="rule-chip p-3 mb-3 d-none">
+                  <div class="fw-bold mb-2">Choose Friends</div>
+                  <div class="row g-2">
+                    <div class="col-sm-6"><label><input class="form-check-input friend-check me-2" type="checkbox"
+                          value="Ayesha Khan">Ayesha Khan</label></div>
+                    <div class="col-sm-6"><label><input class="form-check-input friend-check me-2" type="checkbox"
+                          value="Hira Ahmed">Hira Ahmed</label></div>
+                    <div class="col-sm-6"><label><input class="form-check-input friend-check me-2" type="checkbox"
+                          value="Noor Fatima">Noor Fatima</label></div>
+                    <div class="col-sm-6"><label><input class="form-check-input friend-check me-2" type="checkbox"
+                          value="Mariam Ali">Mariam Ali</label></div>
+                  </div>
+                </div>
+                <button class="btn cf-btn-ink rounded-pill px-4">Share News ↗</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id="newPostArea"></div>
+
+        <article class="pulse-note bg-white mb-4">
+          <div class="row g-0">
+            <div class="col-md-3 note-coral note-side d-flex align-items-center justify-content-center">
+              <div class="mono mono-xl mono-a">AY</div>
+            </div>
+            <div class="col-md-9 p-4 p-lg-5">
+              <div class="d-flex justify-content-between gap-3">
+                <div>
+                  <div class="cf-kicker">FRIEND UPDATE 01</div>
+                  <h3 class="fw-bold mb-1 mt-1">Ayesha Khan</h3><small class="text-secondary">Last login · 2 minutes
+                    ago</small>
+                </div><span class="badge rounded-pill cf-btn-lime text-dark align-self-start">😎 Cool</span>
+              </div>
+              <p class="fs-4 mt-4">Finished my first complete Bootstrap dashboard today. The responsive grid finally
+                makes sense. 🎉</p>
+              <div class="reaction-strip pt-3 mt-4 d-flex flex-wrap gap-2">
+                <button class="btn btn-outline-success rounded-pill reaction-btn" data-type="like" data-post="1">↑ Like
+                  <span id="like-1">24</span></button>
+                <button class="btn btn-outline-danger rounded-pill reaction-btn" data-type="dislike" data-post="1">↓
+                  Dislike <span id="dislike-1">3</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="pulse-note bg-white mb-4">
+          <div class="row g-0 flex-md-row-reverse">
+            <div class="col-md-4 note-lime note-side d-flex align-items-center justify-content-center">
+              <div class="mono mono-xl mono-h">HA</div>
+            </div>
+            <div class="col-md-8 p-4 p-lg-5">
+              <div class="cf-kicker">FRIEND UPDATE 02</div>
+              <h3 class="fw-bold mb-1 mt-1">Hira Ahmed</h3><small class="text-secondary">Last login · 16 minutes
+                ago</small>
+              <p class="fs-4 mt-4">Our algorithms study group is meeting at 4 PM tomorrow. I added the notes to our
+                shared folder.</p>
+              <div class="reaction-strip pt-3 mt-4 d-flex flex-wrap gap-2">
+                <button class="btn btn-outline-success rounded-pill reaction-btn" data-type="like" data-post="2">↑ Like
+                  <span id="like-2">18</span></button>
+                <button class="btn btn-outline-danger rounded-pill reaction-btn" data-type="dislike" data-post="2">↓
+                  Dislike <span id="dislike-2">1</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="pulse-note bg-white">
+          <div class="row g-0">
+            <div class="col-md-3 note-violet note-side d-flex align-items-center justify-content-center">
+              <div class="mono mono-xl mono-n">NF</div>
+            </div>
+            <div class="col-md-9 p-4 p-lg-5">
+              <div class="cf-kicker">FRIEND UPDATE 03</div>
+              <h3 class="fw-bold mb-1 mt-1">Noor Fatima</h3><small class="text-secondary">Last login · 41 minutes
+                ago</small>
+              <p class="fs-4 mt-4">Trying a new study routine: 50 minutes focus, 10 minutes away from the screen. So far
+                it actually works.</p>
+              <div class="reaction-strip pt-3 mt-4 d-flex flex-wrap gap-2">
+                <button class="btn btn-outline-success rounded-pill reaction-btn" data-type="like" data-post="3">↑ Like
+                  <span id="like-3">31</span></button>
+                <button class="btn btn-outline-danger rounded-pill reaction-btn" data-type="dislike" data-post="3">↓
+                  Dislike <span id="dislike-3">4</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <aside class="col-lg-4">
+        <div class="cf-card p-4 mb-4">
+          <div class="cf-kicker">FRIEND RATINGS</div>
+          <h3 class="h4 fw-bold mt-2">Your friend ratings</h3>
+          <div class="d-grid gap-3 mt-4">
+            <div class="d-flex justify-content-between border-bottom pb-3"><span>Trustworthy
+                ratings</span><strong>05</strong></div>
+            <div class="d-flex justify-content-between border-bottom pb-3"><span>Cool ratings</span><strong>04</strong>
+            </div>
+            <div class="d-flex justify-content-between"><span>Unrated friends</span><strong>03</strong></div>
+          </div>
+          <a href="profile.html" class="btn btn-outline-dark rounded-pill w-100 mt-4">Open Profile</a>
+        </div>
+        <div class="cf-card p-4">
+          <div class="cf-kicker">PRIVATE MESSAGES</div>
+          <h3 class="h4 fw-bold mt-2">Continue a private chat.</h3>
+          <p class="text-secondary">Message friends or any other ConnecFriend member privately.</p>
+          <a href="messages.html" class="btn cf-btn-coral rounded-pill w-100">Open Messages</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <footer class="py-4 mt-5">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-2 small text-secondary"><span>ConnecFriend
+          · Fall 2026</span><span>Bootstrap-first UI · local JavaScript demo · no server calls</span></div>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

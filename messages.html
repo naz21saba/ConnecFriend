@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Signal Desk — ConnecFriend</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="cf-nav-wrap py-3">
+        <div class="container">
+            <div class="cf-nav d-flex flex-wrap align-items-center justify-content-between gap-3"><a href="home.html"
+                    class="d-flex align-items-center gap-2 text-decoration-none text-dark"><span
+                        class="cf-mark">CF</span>
+                    <div><strong class="d-block lh-1">ConnecFriend</strong><small class="text-secondary">your people, in
+                            context</small></div>
+                </a>
+                <nav class="d-flex flex-wrap align-items-center gap-2"><a href="home.html"
+                        class="cf-nav-link">Home</a><a href="profile.html" class="cf-nav-link">Profile</a><a
+                        href="discover.html" class="cf-nav-link">Find Friends</a><a href="messages.html"
+                        class="cf-nav-link">Messages</a><a href="login.html"
+                        class="btn btn-sm cf-btn-ink rounded-pill px-3">Exit</a></nav>
+            </div>
+        </div>
+    </header>
+    <main class="container py-4 py-lg-5">
+        <div class="row g-4 align-items-end mb-4">
+            <div class="col-lg-8">
+                <div class="cf-kicker">PRIVATE MESSAGES</div>
+                <h1 class="cf-section-title mt-2">Chat privately with<br>friends and other members.</h1>
+            </div>
+            <div class="col-lg-4">
+                <p class="text-secondary mb-0">Choose a friend or another member and send a private message.</p>
+            </div>
+        </div>
+
+        <div class="signal-shell">
+            <div class="row g-0">
+                <aside class="col-lg-4 signal-list p-3 p-lg-4">
+                    <div class="mb-4"><label class="form-label fw-bold">Choose Recipient</label><select
+                            id="memberSelect" class="form-select rounded-4">
+                            <option value="">Choose a recipient</option>
+                            <optgroup label="Friends">
+                                <option>Ayesha Khan</option>
+                                <option>Hira Ahmed</option>
+                                <option>Noor Fatima</option>
+                            </optgroup>
+                            <optgroup label="Other members">
+                                <option>Farhan Shah</option>
+                                <option>Zoya Malik</option>
+                            </optgroup>
+                        </select></div>
+                    <div class="cf-kicker mb-2">RECENT CHATS</div>
+                    <div class="d-grid gap-2">
+                        <div class="signal-item active">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="mono mono-a">AY</div>
+                                <div><strong class="d-block">Ayesha Khan</strong><small class="text-secondary">See you
+                                        tomorrow!</small></div>
+                            </div>
+                        </div>
+                        <div class="signal-item">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="mono mono-h">HA</div>
+                                <div><strong class="d-block">Hira Ahmed</strong><small class="text-secondary">Thanks for
+                                        the notes.</small></div>
+                            </div>
+                        </div>
+                        <div class="signal-item">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="mono mono-f">FS</div>
+                                <div><strong class="d-block">Farhan Shah</strong><small class="text-secondary">Other
+                                        member</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <section class="col-lg-8">
+                    <div class="p-4 border-bottom bg-white">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="mono mono-a">AY</div>
+                            <div>
+                                <div class="cf-kicker">PRIVATE CHAT</div>
+                                <h2 class="h4 fw-bold mb-0">Conversation</h2><small id="chatRecipientLabel"
+                                    class="text-secondary">Choose a friend or member</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="messageThread" class="signal-thread p-4">
+                        <div class="d-flex mb-3">
+                            <div class="cf-message cf-message-other"><small class="fw-bold d-block mb-1">Ayesha
+                                    Khan</small>Did you finish the Bootstrap assignment?</div>
+                        </div>
+                        <div class="d-flex justify-content-end mb-3">
+                            <div class="cf-message cf-message-me">Almost. I’m redesigning the social network screens
+                                now.</div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="cf-message cf-message-other">Nice — send it when you're done.</div>
+                        </div>
+                    </div>
+                    <div class="p-4 border-top bg-white">
+                        <div id="messageAlert" class="alert alert-danger d-none py-2"></div>
+                        <form id="messageForm" class="d-flex gap-2"><input id="messageInput"
+                                class="form-control form-control-lg rounded-pill"
+                                placeholder="Write a private message..."><button
+                                class="btn cf-btn-ink rounded-pill px-4">Send ↗</button></form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="py-4 mt-5">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between gap-2 small text-secondary">
+                <span>ConnecFriend · Fall 2026</span><span>Bootstrap-first UI · local JavaScript demo · no server
+                    calls</span>
+            </div>
+        </div>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
